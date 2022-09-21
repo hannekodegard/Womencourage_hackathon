@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Question from "../image.png";
 
 export interface Art {
@@ -19,33 +20,35 @@ const CardComponent = ({ art }: Cardprops) => {
     "#70559B",
   ];
   return (
-    <div
-      style={{
-        border: `1px solid ${colors[(art.id - 1) % colors.length]}`,
-        borderRadius: "8px",
-
-        overflow: "hidden",
-      }}
-    >
-      <div style={{ padding: " 4px 8px 0px 8px", marginBottom: "-4px" }}>
-        <div className="art-id">Art {art.id}</div>
-        <img
-          src={art.image_url || Question}
-          style={{
-            width: "100%",
-            objectFit: `${art.image_url ? "cover" : "contain"}`,
-            height: "72px",
-          }}
-        />
-      </div>
+    <Link to="/art" style={{ textDecoration: "none" }}>
       <div
         style={{
-          backgroundColor: colors[(art.id - 1) % colors.length],
+          border: `1px solid ${colors[(art.id - 1) % colors.length]}`,
+          borderRadius: "8px",
+
+          overflow: "hidden",
         }}
       >
-        <div className="art-title">{art.name}</div>
+        <div style={{ padding: " 4px 8px 0px 8px", marginBottom: "-4px" }}>
+          <div className="art-id">Art {art.id}</div>
+          <img
+            src={art.image_url || Question}
+            style={{
+              width: "100%",
+              objectFit: `${art.image_url ? "cover" : "contain"}`,
+              height: "72px",
+            }}
+          />
+        </div>
+        <div
+          style={{
+            backgroundColor: colors[(art.id - 1) % colors.length],
+          }}
+        >
+          <div className="art-title">{art.name}</div>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 export default CardComponent;

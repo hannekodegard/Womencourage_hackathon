@@ -6,6 +6,7 @@ import { GiPaintBucket } from "react-icons/gi";
 import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { data } from "./data";
+import "./Artdex.css";
 
 export const ArtView = ({ currentId }: { currentId: number }) => {
   const [currentArt, setCurrentArt] = useState(data[currentId - 1]);
@@ -20,74 +21,54 @@ export const ArtView = ({ currentId }: { currentId: number }) => {
   };
 
   return (
-    <div>
-      <div style={{ marginTop: 15 }}>
+    <div style={{ paddingTop: 20, padding: 10 }}>
+      <div>
         <Link
-          style={{ textDecoration: "none", color: "#000", margin: 10 }}
-          to={"/artdex"}
+          style={{ textDecoration: "none", color: "#000", paddingRight: 20 }}
+          to={"/map"}
         >
-          <AiOutlineArrowLeft />
+          <AiOutlineArrowLeft size={30} />
         </Link>
-        <Link
-          style={{ textDecoration: "none", color: "#000", margin: 5 }}
-          to={"/artdex"}
-        >
-          <AiOutlineSearch />
-        </Link>
-
         <Link
           style={{
             textDecoration: "none",
             color: "#000",
-            justifyContent: "right",
-            margin: 200,
           }}
-          to={""}
-          onClick={clickFavourite}
+          to={"/"}
         >
-          {favourite && favourite ? <IoMdHeart /> : <IoMdHeartEmpty />}
+          <AiOutlineSearch size={30} />
+        </Link>
+
+        <Link to={""} onClick={clickFavourite} style={{ paddingLeft: 250 }}>
+          {favourite && favourite ? (
+            <IoMdHeart size={30} />
+          ) : (
+            <IoMdHeartEmpty size={30} />
+          )}
         </Link>
       </div>
-      <div
-        style={{
-          justifyContent: "center",
-          alignContent: "center",
-          alignSelf: "center",
-        }}
-      >
-        <div
-          style={{
-            justifyContent: "center",
-            alignContent: "center",
-            alignSelf: "center",
-          }}
-        >
-          <h1>{currentArt.name}</h1>
+      <div>
+        <div>
+          <h1 style={{ textAlign: "left" }}>{currentArt.name}</h1>
           <h5>Art #{currentArt.id}</h5>
         </div>
         <div
           style={{
+            alignItems: "center",
             justifyContent: "center",
-            alignContent: "center",
-            alignSelf: "center",
+            display: "flex",
           }}
         >
-          <img src={currentArt.image_url} />
+          <img style={{ width: 300 }} src={currentArt.image_url} />
         </div>
-        <div
-          style={{
-            justifyContent: "center",
-            alignContent: "center",
-            alignSelf: "center",
-          }}
-        >
+        <div style={{ marginBottom: "80px" }}>
           <h3>About</h3>
           <h4>{currentArt.about}</h4>
           <h5>
             <BsFillCalendarWeekFill /> {currentArt.year}{" "}
             <span>
               <CgRuler /> {currentArt.height}
-            </span>{" "}
+            </span>
             <span>
               <GiPaintBucket /> {currentArt.artist}
             </span>
