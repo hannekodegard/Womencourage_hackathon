@@ -7,7 +7,7 @@ import MapView from "./MapView";
 function App() {
   return (
     <BrowserRouter>
-      <div style={{ padding: "30px" }}>
+      <div>
         <Routes>
           <Route path="/artdex" element={<ArtDex />} />
           <Route path="/map" element={<MapView />} />

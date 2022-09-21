@@ -10,6 +10,7 @@
     justify-content: space-around;
     overflow: visible;
     position: absolute;
+    z-index: 1001;
 }
 .camera-button {
     border-radius: 100%;
