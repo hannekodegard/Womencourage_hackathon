@@ -68,4 +68,28 @@ export const data: Data[] = [
     lat: 63.41959060053063,
     lon: 10.402025454636927,
   },
+  {
+    name: "Munkholmen",
+    id: 7,
+    lat: 63.4507536933257,
+    lon: 10.382670062965888,
+  },
+  {
+    name: "Tyholttårnet",
+    id: 8,
+    lat: 63.422596003161836,
+    lon: 10.431890455824188,
+  },
+  {
+    name: "Eivind",
+    id: 9,
+    lat: 63.422532993940216,
+    lon: 10.395377708615088,
+  },
+];
+
+export const events = [
+  { id: 9, date: "Today", time: "17:00" },
+  { id: 2, date: "Tomorrow", time: "18:30" },
+  { id: 3, date: "23/09/22", time: "19:00" },
 ];

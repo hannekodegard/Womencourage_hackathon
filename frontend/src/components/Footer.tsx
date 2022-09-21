@@ -13,7 +13,9 @@ const Footer = () => {
       <Link to="/map">
         <FaMapMarkedAlt size={30} />
       </Link>
-      <BsFillPeopleFill size={30} />
+      <Link to="/events">
+        <BsFillPeopleFill size={30} />
+      </Link>
       <div className="camera-button">
         <BsCameraFill size={54} />
       </div>

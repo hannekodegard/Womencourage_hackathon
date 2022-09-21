@@ -1,3 +1,5 @@
+import Question from "../image.png";
+
 export interface Art {
   name: string;
   image_url?: string;
@@ -19,7 +21,7 @@ const CardComponent = ({ art }: Cardprops) => {
   return (
     <div
       style={{
-        border: `1px solid ${colors[art.id - 1]}`,
+        border: `1px solid ${colors[(art.id - 1) % colors.length]}`,
         borderRadius: "8px",
 
         overflow: "hidden",
@@ -28,20 +30,17 @@ const CardComponent = ({ art }: Cardprops) => {
       <div style={{ padding: " 4px 8px 0px 8px", marginBottom: "-4px" }}>
         <div className="art-id">Art {art.id}</div>
         <img
-          src={
-            art.image_url ||
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/200px-Question_mark_%28black%29.svg.png"
-          }
+          src={art.image_url || Question}
           style={{
             width: "100%",
-            objectFit: "cover",
+            objectFit: `${art.image_url ? "cover" : "contain"}`,
             height: "72px",
           }}
         />
       </div>
       <div
         style={{
-          backgroundColor: colors[art.id - 1],
+          backgroundColor: colors[(art.id - 1) % colors.length],
         }}
       >
         <div className="art-title">{art.name}</div>
