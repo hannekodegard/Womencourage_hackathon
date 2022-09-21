@@ -12,6 +12,13 @@ const MapView = () => {
   const Markers = data.map((art) => (
     <Marker position={[art.lat, art.lon]} key={art.id}>
       <Popup>
+        <img
+          src={
+            art.image_url ||
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/200px-Question_mark_%28black%29.svg.png"
+          }
+          style={{ width: "100%" }}
+        />
         <span>{art.name}</span>
       </Popup>
     </Marker>
