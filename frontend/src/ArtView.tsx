@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { AiOutlineArrowLeft, AiOutlineSearch } from "react-icons/ai";
-import { BsFillCalendarWeekFill } from "react-icons/bs";
+import { BsFillCalendarWeekFill, BsTextRight } from "react-icons/bs";
 import { CgRuler } from "react-icons/cg";
 import { GiPaintBucket } from "react-icons/gi";
 import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
+import { Link } from "react-router-dom";
 import { data } from "./data";
 
 export const ArtView = ({ currentId }: { currentId: number }) => {
@@ -20,23 +21,66 @@ export const ArtView = ({ currentId }: { currentId: number }) => {
 
   return (
     <div>
-      <div>
-        <button>
+      <div style={{ marginTop: 15 }}>
+        <Link
+          style={{ textDecoration: "none", color: "#000", margin: 10 }}
+          to={"/artdex"}
+        >
           <AiOutlineArrowLeft />
-        </button>
-        <button>
+        </Link>
+        <Link
+          style={{ textDecoration: "none", color: "#000", margin: 5 }}
+          to={"/artdex"}
+        >
           <AiOutlineSearch />
-        </button>
+        </Link>
 
-        <button onClick={clickFavourite}>
+        <Link
+          style={{
+            textDecoration: "none",
+            color: "#000",
+            justifyContent: "right",
+            margin: 200,
+          }}
+          to={""}
+          onClick={clickFavourite}
+        >
           {favourite && favourite ? <IoMdHeart /> : <IoMdHeartEmpty />}
-        </button>
+        </Link>
       </div>
-      <div>
-        <h1>{currentArt.name}</h1>
-        <h5>Art #{currentArt.id}</h5>
-        <img src={currentArt.image_url} />
-        <div>
+      <div
+        style={{
+          justifyContent: "center",
+          alignContent: "center",
+          alignSelf: "center",
+        }}
+      >
+        <div
+          style={{
+            justifyContent: "center",
+            alignContent: "center",
+            alignSelf: "center",
+          }}
+        >
+          <h1>{currentArt.name}</h1>
+          <h5>Art #{currentArt.id}</h5>
+        </div>
+        <div
+          style={{
+            justifyContent: "center",
+            alignContent: "center",
+            alignSelf: "center",
+          }}
+        >
+          <img src={currentArt.image_url} />
+        </div>
+        <div
+          style={{
+            justifyContent: "center",
+            alignContent: "center",
+            alignSelf: "center",
+          }}
+        >
           <h3>About</h3>
           <h4>{currentArt.about}</h4>
           <h5>
