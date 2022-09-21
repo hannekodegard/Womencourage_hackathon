@@ -13,10 +13,10 @@ const ArtDex = () => {
       art.name.toLowerCase().includes(searchTerm)
     );
     setFilteredData(newData);
-  }, [data, searchTerm]);
+  }, [searchTerm]);
 
   return (
-    <div>
+    <div style={{ padding: "30px" }}>
       <div className="artdex-header">
         <BsPaletteFill size={28} />
         <h1>Artdex</h1>

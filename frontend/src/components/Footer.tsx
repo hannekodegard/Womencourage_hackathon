@@ -6,15 +6,20 @@ import {
   BsCameraFill,
   BsFillPersonFill,
 } from "react-icons/bs";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="footer">
-      <FaMapMarkedAlt size={30} />
+      <Link to="/map">
+        <FaMapMarkedAlt size={30} />
+      </Link>
       <BsFillPeopleFill size={30} />
       <div className="camera-button">
         <BsCameraFill size={54} />
       </div>
-      <BsImages size={30} />
+      <Link to="artdex">
+        <BsImages size={30} />
+      </Link>
       <BsFillPersonFill size={30} />
     </div>
   );

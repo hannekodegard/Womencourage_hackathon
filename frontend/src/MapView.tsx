@@ -5,7 +5,7 @@ const MapView = () => {
     <div id="map" style={{ height: "100%", width: "100vw" }}>
       <MapContainer
         center={[55.9533, -3.1883]}
-        zoom={10}
+        zoom={15}
         scrollWheelZoom={false}
         style={{ height: "100vh" }}
         doubleClickZoom

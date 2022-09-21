@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { artPieces } from ".";
 import { AiOutlineArrowLeft, AiOutlineSearch } from "react-icons/ai";
 import { BsFillCalendarWeekFill } from "react-icons/bs";
 import { CgRuler } from "react-icons/cg";
 import { GiPaintBucket } from "react-icons/gi";
 import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
+import { data } from "./data";
 
 export const ArtView = ({ currentId }: { currentId: number }) => {
-  const [currentArt, setCurrentArt] = useState(artPieces[currentId - 1]);
+  const [currentArt, setCurrentArt] = useState(data[currentId - 1]);
   const [favourite, setFavourite] = useState(false);
 
   const clickFavourite = () => {
