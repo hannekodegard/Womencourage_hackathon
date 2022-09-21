@@ -1,0 +1,23 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 64px;
+    background: #A1F8A1;
+    display: flex;
+    max-width: 100vw;
+    align-items: center;
+    justify-content: space-around;
+    overflow: visible;
+    position: absolute;
+}
+.camera-button {
+    border-radius: 100%;
+    padding: 15px;
+    background-color: #A1F8A1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 10%;
+}
